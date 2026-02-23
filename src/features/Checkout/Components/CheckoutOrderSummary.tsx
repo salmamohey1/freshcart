@@ -39,7 +39,7 @@ export default function CheckoutOrderSummary({
             <div key={item.id} className="flex items-center gap-4">
               <div className="relative w-14 h-14 rounded-xl bg-gray-50 border border-gray-100 p-1 shrink-0 overflow-hidden">
                 <Image
-                  src={item.image}
+                  src={item.image || "/placeholder.png"}
                   alt={item.title}
                   fill
                   sizes="56px"

@@ -23,7 +23,7 @@ export default function CartItemCard({
         {/* Thumbnail */}
         <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-3xl bg-gray-50 border border-gray-100 p-4 shrink-0 group-hover:scale-105 transition-transform duration-500">
           <Image
-            src={item.image}
+            src={item.image || "/placeholder.png"}
             alt={item.title}
             fill
             sizes="150px"

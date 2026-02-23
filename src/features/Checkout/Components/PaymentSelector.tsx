@@ -116,16 +116,51 @@ export default function PaymentSelector({
               Recommended
             </span>
           </div>
+{paymentMethod === "online" && (
+  <div className="mt-6 space-y-4 bg-[#F8FAFF] p-6 rounded-xl border border-blue-100 animate-in fade-in slide-in-from-top-2 duration-300">
+    
+    <div>
+      <label className="block text-sm font-bold mb-1">Card Holder Name</label>
+      <input
+        type="text"
+        placeholder="john"
+        className="w-full border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
+      />
+    </div>
 
-          {paymentMethod === "online" && (
-            <div className="mt-6 flex items-start gap-4 bg-[#F0F7FF] p-4 rounded-xl border border-blue-100 animate-in fade-in slide-in-from-top-2 duration-300">
-              <Info size={18} className="text-[#3B82F6] shrink-0" />
-              <p className="text-[#3B82F6] text-sm font-bold leading-relaxed">
-                You will be redirected to secure payment gateway to complete
-                your transaction.
-              </p>
-            </div>
-          )}
+    <div>
+      <label className="block text-sm font-bold mb-1">Card Number</label>
+      <input
+        type="text"
+        placeholder="1234 5678 9012 3456"
+        maxLength={19}
+        className="w-full border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
+      />
+    </div>
+
+    <div className="flex gap-4">
+      <div className="w-1/2">
+        <label className="block text-sm font-bold mb-1">Expiry</label>
+        <input
+          type="text"
+          placeholder="MM/YY"
+          maxLength={5}
+          className="w-full border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
+        />
+      </div>
+
+      <div className="w-1/2">
+        <label className="block text-sm font-bold mb-1">CVV</label>
+        <input
+          type="password"
+          placeholder="123"
+          maxLength={3}
+          className="w-full border border-gray-200 rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-primary-600"
+        />
+      </div>
+    </div>
+  </div>
+)}
         </label>
       </div>
     </div>

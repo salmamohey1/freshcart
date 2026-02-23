@@ -104,13 +104,13 @@ const handleFulfilled = (state: CartState, action: any) => {
   state.loading = false;
   const data = action.payload?.data;
   if (data) {
-    state.items = data.products.map((p: any): CartItem => ({
-      id: p.product._id || p.product.id,
-      title: p.product.title,
-      price: p.price,
-      image: p.product.imageCover,
-      quantity: p.count,
-    }));
+   state.items = data.products.map((p: any): CartItem => ({
+  id: typeof p.product === "string" ? p.product : p.product?._id,
+  title: typeof p.product === "string" ? "" : p.product?.title,
+  price: p.price,
+  image: typeof p.product === "string" ? "" : p.product?.imageCover,
+  quantity: p.count,
+}));
     state.totalAmount = data.totalCartPrice;
     state.totalQuantity = action.payload.numOfCartItems || 0;
     state.cartId = data._id;

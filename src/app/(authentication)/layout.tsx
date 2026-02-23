@@ -28,6 +28,7 @@ export default function ProfileLayout({
 }) {
   const pathname = usePathname();
   const { user } = useSelector((state: RootState) => state.auth);
+ /* console.log("USER DATA:", user);*/
   const dispatch = useDispatch();
   const router = useRouter();
 

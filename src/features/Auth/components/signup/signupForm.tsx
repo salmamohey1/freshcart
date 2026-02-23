@@ -178,7 +178,7 @@ export default function SignupForm() {
           </label>
           <input
             {...register("phone")}
-            placeholder="01010700701"
+            placeholder="01000000000"
             className={`w-full px-5 py-4 bg-gray-50 border-2 ${errors.phone ? "border-red-100" : "border-gray-50"} rounded-2xl text-sm font-bold focus:ring-4 focus:ring-primary-600/5 focus:bg-white focus:border-primary-100 outline-none transition-all`}
           />
           {errors.phone && (
